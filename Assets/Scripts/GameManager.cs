@@ -239,6 +239,11 @@ public class GameManager : MonoBehaviour
             {
                 winPanel.SetActive(true);
             }
+
+            if (SaveManager.Instance != null)
+            {
+                SaveManager.Instance.SaveGame();
+            }
         }
     }
     // =========================

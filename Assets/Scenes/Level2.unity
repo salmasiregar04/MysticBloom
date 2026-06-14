@@ -129,8 +129,9 @@ GameObject:
   m_Component:
   - component: {fileID: 147230081}
   - component: {fileID: 147230083}
-  - component: {fileID: 147230082}
   - component: {fileID: 147230084}
+  - component: {fileID: 147230082}
+  - component: {fileID: 147230085}
   m_Layer: 5
   m_Name: ShuffleBooster
   m_TagString: Untagged
@@ -239,9 +240,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 198869876}
-        m_TargetAssemblyTypeName: BoosterManager, Assembly-CSharp
-        m_MethodName: UseShuffle
+      - m_Target: {fileID: 147230085}
+        m_TargetAssemblyTypeName: ShuffleBooster, Assembly-CSharp
+        m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -251,6 +252,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &147230085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147230080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb76323027fd274d90962be00c99575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShuffleBooster
+  boosterName: Shuffle
 --- !u!1 &198836665
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,8 +719,9 @@ GameObject:
   m_Component:
   - component: {fileID: 608776087}
   - component: {fileID: 608776089}
-  - component: {fileID: 608776088}
   - component: {fileID: 608776090}
+  - component: {fileID: 608776088}
+  - component: {fileID: 608776091}
   m_Layer: 5
   m_Name: HammerBooster
   m_TagString: Untagged
@@ -815,9 +830,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 198869876}
-        m_TargetAssemblyTypeName: BoosterManager, Assembly-CSharp
-        m_MethodName: ActivateHammer
+      - m_Target: {fileID: 608776091}
+        m_TargetAssemblyTypeName: HammerBooster, Assembly-CSharp
+        m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -827,6 +842,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &608776091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608776086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ceb3c679c15a5448042425f0c62ca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HammerBooster
+  boosterName: Hammer
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,7 +1376,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 645, y: 645}
+  m_SizeDelta: {x: 630, y: 630}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &909762380
 MonoBehaviour:
@@ -4104,7 +4132,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000030517578, y: 0.000015258789}
-  m_SizeDelta: {x: 695, y: 695}
+  m_SizeDelta: {x: 680, y: 680}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2076317370
 MonoBehaviour:
