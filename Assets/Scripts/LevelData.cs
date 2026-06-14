@@ -9,4 +9,6 @@ public class LevelData : ScriptableObject
     public int moves;
     public int targetRed;
     public int targetBlue;
+    public int targetGreen;
+    public int targetYellow;
 }

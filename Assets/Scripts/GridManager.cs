@@ -189,6 +189,16 @@ public class GridManager : MonoBehaviour
                     {
                         GameManager.Instance.CollectBlue();
                     }
+
+                    if (data.tileType == "Green")
+                    {
+                        GameManager.Instance.CollectGreen();
+                    }
+
+                    if (data.tileType == "Yellow")
+                    {
+                        GameManager.Instance.CollectYellow();
+                    }   
                 }
 
                 Tile tileScript =

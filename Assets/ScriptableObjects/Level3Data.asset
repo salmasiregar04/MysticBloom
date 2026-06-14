@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2245a48e9dc17b41a1b22d4a8da0118, type: 3}
   m_Name: Level3Data
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  moves: 0
-  targetRed: 0
-  targetBlue: 0
+  moves: 30
+  targetRed: 25
+  targetBlue: 25
+  targetGreen: 25
+  targetYellow: 50

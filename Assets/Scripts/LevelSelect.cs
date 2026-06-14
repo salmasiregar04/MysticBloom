@@ -1,15 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
 
 public class LevelSelect : MonoBehaviour
 {
     public Button level2Button;
     public Button level3Button;
 
-    public TMP_Text level2Text;
-    public TMP_Text level3Text;
+    public GameObject level2UnlockedImage;
+    public GameObject level2LockedImage;
+
+    public GameObject level3UnlockedImage;
+    public GameObject level3LockedImage;
 
     private void Start()
     {
@@ -31,11 +33,21 @@ public class LevelSelect : MonoBehaviour
         level3Button.interactable =
             level3Unlocked;
 
-        level2Text.text =
-            level2Unlocked ? "2" : "[Locked]\n2";
+        level2UnlockedImage.SetActive(
+            level2Unlocked
+        );
 
-        level3Text.text =
-            level3Unlocked ? "3" : "[Locked]\n3";
+        level2LockedImage.SetActive(
+            !level2Unlocked
+        );
+
+        level3UnlockedImage.SetActive(
+            level3Unlocked
+        );
+
+        level3LockedImage.SetActive(
+            !level3Unlocked
+        );
     }
 
     public void LoadLevel1()

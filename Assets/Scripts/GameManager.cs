@@ -20,8 +20,16 @@ public class GameManager : MonoBehaviour
     public int targetBlue = 10;
     public int collectedBlue = 0;
 
+    public int targetGreen = 10;
+    public int collectedGreen = 0;
+
+    public int targetYellow = 5;
+    public int collectedYellow = 0;
+
     public TMP_Text RedObjectiveText;
     public TMP_Text BlueObjectiveText;
+    public TMP_Text GreenObjectiveText;
+    public TMP_Text YellowObjectiveText;
 
     [Header("Panels")]
     public GameObject winPanel;
@@ -46,6 +54,12 @@ public class GameManager : MonoBehaviour
 
             targetBlue =
                 levelData.targetBlue;
+
+            targetGreen =
+                levelData.targetGreen;
+
+            targetYellow =
+                levelData.targetYellow;
         }
 
         UpdateMovesUI();
@@ -111,6 +125,30 @@ public class GameManager : MonoBehaviour
         CheckWinCondition();
     }
 
+    public void CollectGreen()
+    {
+        if (gameEnded)
+            return;
+
+        collectedGreen++;
+
+        UpdateObjectiveUI();
+
+        CheckWinCondition();
+    }
+
+    public void CollectYellow()
+    {
+        if (gameEnded)
+            return;
+
+        collectedYellow++;
+
+        UpdateObjectiveUI();
+
+        CheckWinCondition();
+    }
+
     void UpdateObjectiveUI()
     {
         int redRemaining =
@@ -118,6 +156,12 @@ public class GameManager : MonoBehaviour
 
         int blueRemaining =
             Mathf.Max(0, targetBlue - collectedBlue);
+
+        int greenRemaining =
+            Mathf.Max(0, targetGreen - collectedGreen);
+            
+        int yellowRemaining =
+            Mathf.Max(0, targetYellow - collectedYellow);
 
         if (RedObjectiveText != null)
         {
@@ -130,6 +174,18 @@ public class GameManager : MonoBehaviour
             BlueObjectiveText.text =
                 blueRemaining.ToString();
         }
+
+        if (GreenObjectiveText != null)
+        {
+            GreenObjectiveText.text =
+                greenRemaining.ToString();
+        }
+
+        if (YellowObjectiveText != null)
+        {
+            YellowObjectiveText.text =
+                yellowRemaining.ToString();
+        }
     }
 
     // =========================
@@ -140,12 +196,16 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log(
             "Red: " + collectedRed + "/" + targetRed +
-            " | Blue: " + collectedBlue + "/" + targetBlue
+            " | Blue: " + collectedBlue + "/" + targetBlue +
+            " | Green: " + collectedGreen + "/" + targetGreen +
+            " | Yellow: " + collectedYellow + "/" + targetYellow
         );
 
         if (
             collectedRed >= targetRed &&
-            collectedBlue >= targetBlue
+            collectedBlue >= targetBlue &&
+            collectedGreen >= targetGreen &&
+            collectedYellow >= targetYellow
         )
         {
             Debug.Log("YOU WIN");
@@ -189,7 +249,9 @@ public class GameManager : MonoBehaviour
             movesRemaining <= 0 &&
             (
                 collectedRed < targetRed ||
-                collectedBlue < targetBlue
+                collectedBlue < targetBlue ||
+                collectedGreen < targetGreen ||
+                collectedYellow < targetYellow  
             )
            )
         {
