@@ -210,6 +210,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("YOU WIN");
 
+            AudioManager.Instance.PlayWin();
+
             gameEnded = true;
 
             string currentLevel =
@@ -258,6 +260,8 @@ public class GameManager : MonoBehaviour
             gameEnded = true;
 
             Debug.Log("YOU LOSE");
+
+            AudioManager.Instance.PlayLose();
 
             if (losePanel != null)
             {

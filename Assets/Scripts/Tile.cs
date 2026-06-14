@@ -108,8 +108,10 @@ public class Tile : MonoBehaviour
     IEnumerator SwapAndCheckMatch(Tile otherTile)
     {
         yield return StartCoroutine(
-            SwapTiles(otherTile)
+        SwapTiles(otherTile)
         );
+
+        AudioManager.Instance.PlaySwap();
 
         var matches = gridManager.FindMatches();
 

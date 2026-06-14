@@ -917,31 +917,31 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1687188760}
     m_Modifications:
     - target: {fileID: 530825521323038333, guid: 77c6e3b0c56f28a4d98f44c2ae2b8cab, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2
+      value: 83.67532
       objectReference: {fileID: 0}
     - target: {fileID: 530825521323038333, guid: 77c6e3b0c56f28a4d98f44c2ae2b8cab, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2
+      value: 83.67532
       objectReference: {fileID: 0}
     - target: {fileID: 530825521323038333, guid: 77c6e3b0c56f28a4d98f44c2ae2b8cab, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2
+      value: 83.67532
       objectReference: {fileID: 0}
     - target: {fileID: 530825521323038333, guid: 77c6e3b0c56f28a4d98f44c2ae2b8cab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.91
+      value: 3.203064
       objectReference: {fileID: 0}
     - target: {fileID: 530825521323038333, guid: 77c6e3b0c56f28a4d98f44c2ae2b8cab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2
+      value: -2.6482391
       objectReference: {fileID: 0}
     - target: {fileID: 530825521323038333, guid: 77c6e3b0c56f28a4d98f44c2ae2b8cab, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 627.5648
       objectReference: {fileID: 0}
     - target: {fileID: 530825521323038333, guid: 77c6e3b0c56f28a4d98f44c2ae2b8cab, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1191,6 +1191,7 @@ RectTransform:
   m_LocalScale: {x: 1.0002095, y: 1.0002095, z: 1.0002095}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1892442857}
   - {fileID: 1412775465}
   m_Father: {fileID: 1887694677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1347,7 +1348,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 550, y: 550}
+  m_SizeDelta: {x: 645, y: 645}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &909762380
 MonoBehaviour:
@@ -1399,6 +1400,7 @@ GameObject:
   - component: {fileID: 977811474}
   - component: {fileID: 977811473}
   - component: {fileID: 977811472}
+  - component: {fileID: 977811475}
   m_Layer: 6
   m_Name: RetryButton
   m_TagString: Untagged
@@ -1469,6 +1471,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 977811475}
+        m_TargetAssemblyTypeName: UIButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1097877047}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: RetryLevel
@@ -1519,6 +1533,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977811470}
   m_CullTransparentMesh: 1
+--- !u!114 &977811475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977811470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b869beb0e142b7148b65be0cc81077c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
 --- !u!1 &980575425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,6 +1557,7 @@ GameObject:
   - component: {fileID: 980575429}
   - component: {fileID: 980575428}
   - component: {fileID: 980575427}
+  - component: {fileID: 980575430}
   m_Layer: 6
   m_Name: MenuButton
   m_TagString: Untagged
@@ -1601,6 +1628,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 980575430}
+        m_TargetAssemblyTypeName: UIButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1097877047}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: BackToMenu
@@ -1651,6 +1690,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980575425}
   m_CullTransparentMesh: 1
+--- !u!114 &980575430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980575425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b869beb0e142b7148b65be0cc81077c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
 --- !u!1 &1002973494
 GameObject:
   m_ObjectHideFlags: 0
@@ -2089,6 +2140,7 @@ GameObject:
   - component: {fileID: 1275978083}
   - component: {fileID: 1275978082}
   - component: {fileID: 1275978081}
+  - component: {fileID: 1275978084}
   m_Layer: 6
   m_Name: NextButton
   m_TagString: Untagged
@@ -2159,6 +2211,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1275978084}
+        m_TargetAssemblyTypeName: UIButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1097877047}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: NextLevel
@@ -2209,6 +2273,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275978079}
   m_CullTransparentMesh: 1
+--- !u!114 &1275978084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275978079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b869beb0e142b7148b65be0cc81077c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
 --- !u!1 &1389074933
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,6 +2297,7 @@ GameObject:
   - component: {fileID: 1389074937}
   - component: {fileID: 1389074936}
   - component: {fileID: 1389074935}
+  - component: {fileID: 1389074938}
   m_Layer: 6
   m_Name: ResumeButton
   m_TagString: Untagged
@@ -2291,6 +2368,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1389074938}
+        m_TargetAssemblyTypeName: UIButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 296678722}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: ResumeGame
@@ -2341,6 +2430,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389074933}
   m_CullTransparentMesh: 1
+--- !u!114 &1389074938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389074933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b869beb0e142b7148b65be0cc81077c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
 --- !u!1 &1412775464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2870,6 +2971,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &1633126370 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 530825521323038333, guid: 77c6e3b0c56f28a4d98f44c2ae2b8cab, type: 3}
+  m_PrefabInstance: {fileID: 661485374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1687188759
 GameObject:
   m_ObjectHideFlags: 0
@@ -2900,6 +3006,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1633126370}
   - {fileID: 1917790140}
   m_Father: {fileID: 1887694677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2952,31 +3059,31 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 2051277292}
     m_Modifications:
     - target: {fileID: 1450183503693838498, guid: 29da9e7023339f444a50905153fd9a4f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2
+      value: 83.67531
       objectReference: {fileID: 0}
     - target: {fileID: 1450183503693838498, guid: 29da9e7023339f444a50905153fd9a4f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2
+      value: 83.67531
       objectReference: {fileID: 0}
     - target: {fileID: 1450183503693838498, guid: 29da9e7023339f444a50905153fd9a4f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2
+      value: 83.67531
       objectReference: {fileID: 0}
     - target: {fileID: 1450183503693838498, guid: 29da9e7023339f444a50905153fd9a4f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.91
+      value: 1.2031555
       objectReference: {fileID: 0}
     - target: {fileID: 1450183503693838498, guid: 29da9e7023339f444a50905153fd9a4f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.68
+      value: 3.2807007
       objectReference: {fileID: 0}
     - target: {fileID: 1450183503693838498, guid: 29da9e7023339f444a50905153fd9a4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 627.5648
       objectReference: {fileID: 0}
     - target: {fileID: 1450183503693838498, guid: 29da9e7023339f444a50905153fd9a4f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2984,15 +3091,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1450183503693838498, guid: 29da9e7023339f444a50905153fd9a4f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1450183503693838498, guid: 29da9e7023339f444a50905153fd9a4f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1450183503693838498, guid: 29da9e7023339f444a50905153fd9a4f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1450183503693838498, guid: 29da9e7023339f444a50905153fd9a4f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3027,6 +3134,7 @@ GameObject:
   - component: {fileID: 1787999146}
   - component: {fileID: 1787999145}
   - component: {fileID: 1787999144}
+  - component: {fileID: 1787999147}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -3097,6 +3205,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1787999147}
+        m_TargetAssemblyTypeName: UIButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 296678722}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: PauseGame
@@ -3147,6 +3267,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787999142}
   m_CullTransparentMesh: 1
+--- !u!114 &1787999147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787999142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b869beb0e142b7148b65be0cc81077c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
 --- !u!1 &1806177030
 GameObject:
   m_ObjectHideFlags: 0
@@ -3178,6 +3310,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1572093405}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1818409475 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1450183503693838498, guid: 29da9e7023339f444a50905153fd9a4f, type: 3}
+  m_PrefabInstance: {fileID: 1773807965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1887694676
 GameObject:
   m_ObjectHideFlags: 0
@@ -3269,6 +3406,7 @@ GameObject:
   - component: {fileID: 1892335061}
   - component: {fileID: 1892335060}
   - component: {fileID: 1892335059}
+  - component: {fileID: 1892335062}
   m_Layer: 6
   m_Name: BackToMenuButton
   m_TagString: Untagged
@@ -3339,6 +3477,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1892335062}
+        m_TargetAssemblyTypeName: UIButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 296678722}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: BackToMenu
@@ -3389,6 +3539,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892335057}
   m_CullTransparentMesh: 1
+--- !u!114 &1892335062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892335057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b869beb0e142b7148b65be0cc81077c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
+--- !u!4 &1892442857 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6323613289647357770, guid: 3ae3efa60298e2348aff1dc4a6407a39, type: 3}
+  m_PrefabInstance: {fileID: 1924969096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1917790139
 GameObject:
   m_ObjectHideFlags: 0
@@ -3532,31 +3699,31 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 764583251}
     m_Modifications:
     - target: {fileID: 6323613289647357770, guid: 3ae3efa60298e2348aff1dc4a6407a39, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2
+      value: 83.65779
       objectReference: {fileID: 0}
     - target: {fileID: 6323613289647357770, guid: 3ae3efa60298e2348aff1dc4a6407a39, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2
+      value: 83.65779
       objectReference: {fileID: 0}
     - target: {fileID: 6323613289647357770, guid: 3ae3efa60298e2348aff1dc4a6407a39, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2
+      value: 83.65779
       objectReference: {fileID: 0}
     - target: {fileID: 6323613289647357770, guid: 3ae3efa60298e2348aff1dc4a6407a39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.89
+      value: 1.2029035
       objectReference: {fileID: 0}
     - target: {fileID: 6323613289647357770, guid: 3ae3efa60298e2348aff1dc4a6407a39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.17
+      value: 1.0256641
       objectReference: {fileID: 0}
     - target: {fileID: 6323613289647357770, guid: 3ae3efa60298e2348aff1dc4a6407a39, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 627.43335
       objectReference: {fileID: 0}
     - target: {fileID: 6323613289647357770, guid: 3ae3efa60298e2348aff1dc4a6407a39, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3564,15 +3731,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6323613289647357770, guid: 3ae3efa60298e2348aff1dc4a6407a39, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6323613289647357770, guid: 3ae3efa60298e2348aff1dc4a6407a39, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6323613289647357770, guid: 3ae3efa60298e2348aff1dc4a6407a39, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6323613289647357770, guid: 3ae3efa60298e2348aff1dc4a6407a39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3854,6 +4021,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1818409475}
   - {fileID: 1002973495}
   m_Father: {fileID: 1887694677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3936,7 +4104,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000030517578, y: 0.000015258789}
-  m_SizeDelta: {x: 600, y: 600}
+  m_SizeDelta: {x: 695, y: 695}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2076317370
 MonoBehaviour:
@@ -3988,6 +4156,7 @@ GameObject:
   - component: {fileID: 2145898629}
   - component: {fileID: 2145898628}
   - component: {fileID: 2145898627}
+  - component: {fileID: 2145898630}
   m_Layer: 6
   m_Name: OptionsButton
   m_TagString: Untagged
@@ -4058,6 +4227,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2145898630}
+        m_TargetAssemblyTypeName: UIButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 296678722}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: OpenOptions
@@ -4108,6 +4289,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145898625}
   m_CullTransparentMesh: 1
+--- !u!114 &2145898630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145898625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b869beb0e142b7148b65be0cc81077c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4116,9 +4309,6 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1572093405}
   - {fileID: 1219795509}
-  - {fileID: 661485374}
-  - {fileID: 1924969096}
-  - {fileID: 1773807965}
   - {fileID: 750954426}
   - {fileID: 2048270376}
   - {fileID: 1259001863}

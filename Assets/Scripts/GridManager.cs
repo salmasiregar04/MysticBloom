@@ -169,7 +169,9 @@ public class GridManager : MonoBehaviour
         List<GameObject> matchedTiles = FindMatches();
 
         if (matchedTiles.Count == 0)
-            yield break;
+        yield break;
+
+        AudioManager.Instance.PlayMatch();
 
         foreach (GameObject tile in matchedTiles)
         {

@@ -10,34 +10,75 @@ public class OptionsMenu : MonoBehaviour
 
     private void Start()
     {
-        musicSlider.value =
-            PlayerPrefs.GetFloat("MusicVolume", 1f);
+            float musicVolume =
+        PlayerPrefs.GetFloat("MusicVolume", 1f);
 
-        AudioListener.volume =
-            musicSlider.value;
-        sfxSlider.value = 1f;
+    float sfxVolume =
+        PlayerPrefs.GetFloat("SFXVolume", 1f);
 
-        fullscreenToggle.isOn =
-            Screen.fullScreen;
+    musicSlider.value = musicVolume;
+    sfxSlider.value = sfxVolume;
+    bool fullscreen =
+        PlayerPrefs.GetInt(
+            "Fullscreen",
+            1
+        ) == 1;
+
+    Screen.fullScreen = fullscreen;
+    fullscreenToggle.isOn = fullscreen;
+
+    if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.SetBGMVolume(musicVolume);
+            AudioManager.Instance.SetSFXVolume(sfxVolume);
+        }
     }
 
     public void SetMusicVolume(float value)
     {
-        Debug.Log("Music Volume: " + value);
-        AudioListener.volume = value;
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.SetBGMVolume(value);
+        }
+
         PlayerPrefs.SetFloat("MusicVolume", value);
+        PlayerPrefs.Save();
     }
 
     public void SetSFXVolume(float value)
     {
-        Debug.Log("SFX Volume: " + value);
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.SetSFXVolume(value);
+        }
+
+        PlayerPrefs.SetFloat("SFXVolume", value);
+        PlayerPrefs.Save();
     }
 
     public void SetFullscreen(bool isFullscreen)
     {
-        Screen.fullScreen = isFullscreen;
-    }
+        if (isFullscreen)
+        {
+            Screen.fullScreenMode =
+                FullScreenMode.FullScreenWindow;
+        }
+        else
+        {
+            Screen.fullScreenMode =
+                FullScreenMode.Windowed;
+        }
 
+        Screen.fullScreen = isFullscreen;
+
+        Debug.Log(
+            "Fullscreen: " +
+            Screen.fullScreen +
+            " | Mode: " +
+            Screen.fullScreenMode
+        );
+    }
+    
     public void BackToMenu()
     {
         if (NavigationManager.OpenedFromPause)
