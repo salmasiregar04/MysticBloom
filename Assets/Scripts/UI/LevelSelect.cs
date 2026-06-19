@@ -16,16 +16,14 @@ public class LevelSelect : MonoBehaviour
     private void Start()
     {
         bool level2Unlocked =
-            PlayerPrefs.GetInt(
-                "Level2Unlocked",
-                0
-            ) == 1;
+            SaveManager.Instance
+            .CurrentData
+            .level2Unlocked;
 
         bool level3Unlocked =
-            PlayerPrefs.GetInt(
-                "Level3Unlocked",
-                0
-            ) == 1;
+            SaveManager.Instance
+            .CurrentData
+            .level3Unlocked;
 
         level2Button.interactable =
             level2Unlocked;

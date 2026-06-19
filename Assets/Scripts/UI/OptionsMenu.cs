@@ -10,19 +10,20 @@ public class OptionsMenu : MonoBehaviour
 
     private void Start()
     {
-            float musicVolume =
-        PlayerPrefs.GetFloat("MusicVolume", 1f);
+        float musicVolume =
+            SaveManager.Instance
+            .CurrentData
+            .musicVolume;
 
-    float sfxVolume =
-        PlayerPrefs.GetFloat("SFXVolume", 1f);
+        float sfxVolume =
+            SaveManager.Instance
+            .CurrentData
+            .sfxVolume;
 
-    musicSlider.value = musicVolume;
-    sfxSlider.value = sfxVolume;
-    bool fullscreen =
-        PlayerPrefs.GetInt(
-            "Fullscreen",
-            1
-        ) == 1;
+        bool fullscreen =
+            SaveManager.Instance
+            .CurrentData
+            .fullscreen;
 
     Screen.fullScreen = fullscreen;
     fullscreenToggle.isOn = fullscreen;
@@ -41,8 +42,11 @@ public class OptionsMenu : MonoBehaviour
             AudioManager.Instance.SetBGMVolume(value);
         }
 
-        PlayerPrefs.SetFloat("MusicVolume", value);
-        PlayerPrefs.Save();
+        SaveManager.Instance
+            .CurrentData
+            .musicVolume = value;
+
+        SaveManager.Instance.SaveGame();
     }
 
     public void SetSFXVolume(float value)
@@ -52,9 +56,11 @@ public class OptionsMenu : MonoBehaviour
             AudioManager.Instance.SetSFXVolume(value);
         }
 
-        PlayerPrefs.SetFloat("SFXVolume", value);
-        PlayerPrefs.Save();
-    }
+        SaveManager.Instance
+            .CurrentData
+            .sfxVolume = value;
+
+        SaveManager.Instance.SaveGame();    }
 
     public void SetFullscreen(bool isFullscreen)
     {
@@ -70,6 +76,13 @@ public class OptionsMenu : MonoBehaviour
         }
 
         Screen.fullScreen = isFullscreen;
+
+        SaveManager.Instance
+            .CurrentData
+            .fullscreen =
+            isFullscreen;
+
+        SaveManager.Instance.SaveGame();
 
         Debug.Log(
             "Fullscreen: " +

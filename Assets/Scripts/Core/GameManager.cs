@@ -217,32 +217,28 @@ public class GameManager : MonoBehaviour
             string currentLevel =
                 SceneManager.GetActiveScene().name;
 
-            if (currentLevel == "Level1")
+            if (SaveManager.Instance != null)
             {
-                PlayerPrefs.SetInt(
-                    "Level2Unlocked",
-                    1
-                );
-            }
+                if (currentLevel == "Level1")
+                {
+                    SaveManager.Instance
+                        .CurrentData
+                        .level2Unlocked = true;
+                }
 
-            if (currentLevel == "Level2")
-            {
-                PlayerPrefs.SetInt(
-                    "Level3Unlocked",
-                    1
-                );
-            }
+                if (currentLevel == "Level2")
+                {
+                    SaveManager.Instance
+                        .CurrentData
+                        .level3Unlocked = true;
+                }
 
-            PlayerPrefs.Save();
+                SaveManager.Instance.SaveGame();
+            }
 
             if (winPanel != null)
             {
                 winPanel.SetActive(true);
-            }
-
-            if (SaveManager.Instance != null)
-            {
-                SaveManager.Instance.SaveGame();
             }
         }
     }

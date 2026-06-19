@@ -1116,9 +1116,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1437304792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 730d70e92a134f346b0d0ce4c1fbfc3e, type: 3}
+  m_Script: {fileID: 11500000, guid: b869beb0e142b7148b65be0cc81077c8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonSound
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
 --- !u!1 &1647356276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,6 +1223,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6acc27e2338f34e44a7798fddd6b49d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveManager
+  CurrentData:
+    level2Unlocked: 0
+    level3Unlocked: 0
+    musicVolume: 1
+    sfxVolume: 1
+    fullscreen: 1
 --- !u!4 &1697779310
 Transform:
   m_ObjectHideFlags: 0
